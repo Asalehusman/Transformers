@@ -12,7 +12,7 @@ import android.view.WindowManager;
 public class SplashActivity extends Activity  {
 
     //Set the time the splash scree time will take
-    private static int splashInterval = 2000;
+    private static int splashInterval = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class SplashActivity extends Activity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+// Set the view of this activity to be Splash.xml
         setContentView(R.layout.splash);
 
         new Handler().postDelayed(new Runnable() {
@@ -29,7 +29,7 @@ public class SplashActivity extends Activity  {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                //Starting the splash activity
+          //Starting the splash activity
                 Intent i = new Intent(SplashActivity.this, Main.class);
                 startActivity(i);
 

@@ -1,39 +1,44 @@
 package com.boonstudio.optimusprime.loool;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
+public class Main extends Activity {
 
-public class Main extends ActionBarActivity {
+    //Initialize a button
+    Button button;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+      //This code will add the button method
+
+        addListenerOnButton();
     }
+ //Listener will be added to the button.
+ // It will "Listen" to the click that the user will input so as to do something
+    public void addListenerOnButton() {
 
+        final Context context = this;
+//We will specify the button we want to listen to"
+        button = (Button) findViewById(R.id.btn1);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
+        button.setOnClickListener(new OnClickListener() {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+            @Override
+            public void onClick(View arg0) {
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+                Intent intent = new Intent(context, Megatron.class);
+                startActivity(intent);
 
-        return super.onOptionsItemSelected(item);
-    }
-}
+            }
+
+        });
+
+    }}

@@ -20,12 +20,17 @@
                </intent-filter>
    	        </activity>
 
-
     	        <!-- Main Activity -->
     	        <activity
     	            android:name="com.boonstudio.optimusprime.loool.Main"
     	            android:label="@string/app_name" >
    	        </activity>
+            <!-- Megatron Activity -->
+            <activity
+                android:name="com.boonstudio.optimusprime.loool.Megatron"
+                android:label="@string/app_name" >
+            </activity>
+
 
     	    </application>
 
